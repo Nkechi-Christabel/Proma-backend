@@ -1,18 +1,14 @@
-require("dotenv").config();
+// require("dotenv").config();
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
+const User = require("../models/User");
 // const dotenv = require("dotenv");
 // const path = require("path");
 // dotenv.config({ path: path.join(__dirname, "./config/.env") });
 
-//JWT Cookie Combo Passport Strategy
-// const JwtCookieComboStrategy = require("passport-jwt-cookiecombo");
-// const config = require("./passportConfig");
 console.log(process.env.JWT_SECRET);
-
-const User = require("../models/User");
 
 passport.use(
   new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
@@ -40,15 +36,6 @@ passport.use(
     });
   })
 );
-
-// const cookieExtractor = (req) => {
-//   let token = null;
-//   console.log(token);
-//   if (req && req.cookies) {
-//     token = req.cookies["access_token"];
-//   }
-//   return token;
-// }
 
 const opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();

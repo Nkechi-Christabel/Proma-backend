@@ -1,8 +1,10 @@
-require("dotenv").config();
+// require("dotenv").config();
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const validator = require("validator");
 const User = require("../models/User");
+
+console.log("dotenv", process.env.JWT_SECRET);
 // const dotenv = require("dotenv");
 // const path = require("path");
 
