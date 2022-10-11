@@ -49,7 +49,7 @@ passport.use(
 // }
 
 const opts = {};
-opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken("jwt");
+opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = process.env.JWT_SECRET || "secret";
 // opts.audience = "http://localhost:8000/";
 passport.use(
