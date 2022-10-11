@@ -14,9 +14,10 @@ const projectRoutes = require("./routes/projects");
 require("./config/database");
 require("./config/passport");
 const PORT = process.env.PORT || 8002;
+
 //Cross-browser-origin
 const corsOptions = {
-  origin: "http://localhost:3000" || process.env.PORT,
+  origin: process.env.SITE_ORIGIN || process.env.PORT,
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
