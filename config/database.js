@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 
 // // dotenv.config({ path: path.join(__dirname + "./env") });
 // console.log(process.env.DB_STRING);
-console.log("database", process.env.JWT_SECRET);
 
 mongoose.connect(process.env.DB_STRING);
 

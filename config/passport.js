@@ -8,8 +8,6 @@ const User = require("../models/User");
 // const path = require("path");
 // dotenv.config({ path: path.join(__dirname, "./config/.env") });
 
-console.log(process.env.JWT_SECRET);
-
 passport.use(
   new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
     User.findOne({ email: email.toLowerCase() }, (err, user) => {
