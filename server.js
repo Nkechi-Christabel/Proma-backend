@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8002;
 // const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const logger = require("morgan");
