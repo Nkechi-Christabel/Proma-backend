@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
-// const session = require("express-session");
+
 const MongoStore = require("connect-mongo");
 const logger = require("morgan");
 const app = express();
@@ -36,23 +36,6 @@ app.use(cookieParser());
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-//Setup Sessions - stored in MongoDB
-// app.use(
-//   session({
-//     secret: process.env.SECRET || "ykkiatcen",
-//     resave: true,
-//     saveUninitialized: false,
-//     cookie: {
-//       secure: true,
-//       maxAge: 1000 * 60 * 60 * 24,
-//       httpOnly: true,
-//     },
-//     store: MongoStore.create({
-//       mongoUrl: process.env.DB_STRING,
-//     }),
-//   })
-// );
 
 // Passport middleware
 app.use(passport.initialize());
