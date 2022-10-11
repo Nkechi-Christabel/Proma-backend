@@ -4,6 +4,7 @@ const validator = require("validator");
 const User = require("../models/User");
 const dotenv = require("dotenv");
 const path = require("path");
+
 dotenv.config({ path: path.join(__dirname, "../config/.env") });
 
 module.exports.postLogin = (req, res, next) => {
