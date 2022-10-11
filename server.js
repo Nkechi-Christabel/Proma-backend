@@ -1,7 +1,6 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
-const PORT = process.env.PORT || 8002;
 // const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const logger = require("morgan");
@@ -14,7 +13,7 @@ const path = require("path");
 dotenv.config({ path: path.join(__dirname, "./config/.env") });
 require("./config/database");
 require("./config/passport");
-
+const PORT = process.env.PORT || 8002;
 //Cross-browser-origin
 const corsOptions = {
   origin: "http://localhost:3000" || process.env.PORT,
@@ -22,7 +21,7 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 //Logging in the console
 app.use(logger("dev"));

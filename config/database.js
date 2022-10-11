@@ -1,8 +1,10 @@
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const path = require("path");
+// const path = require("path");
+// require("dotenv").config({ path: "./env" });
 
-dotenv.config({ path: path.join(__dirname + "./env") });
+// // dotenv.config({ path: path.join(__dirname + "./env") });
+// console.log(process.env.DB_STRING);
 
 mongoose.connect(process.env.DB_STRING);
 
