@@ -1,11 +1,12 @@
+require("dotenv").config();
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const validator = require("validator");
 const User = require("../models/User");
-const dotenv = require("dotenv");
-const path = require("path");
+// const dotenv = require("dotenv");
+// const path = require("path");
 
-dotenv.config({ path: path.join(__dirname, "../config/.env") });
+// dotenv.config({ path: path.join(__dirname, "../config/.env") });
 
 module.exports.postLogin = (req, res, next) => {
   if (!validator.isEmail(req.body.email))

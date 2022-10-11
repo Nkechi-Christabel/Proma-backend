@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
@@ -8,9 +9,9 @@ const app = express();
 const cors = require("cors");
 const mainRoutes = require("./routes/main");
 const projectRoutes = require("./routes/projects");
-const dotenv = require("dotenv");
-const path = require("path");
-dotenv.config({ path: path.join(__dirname, "./config/.env") });
+// const dotenv = require("dotenv");
+// const path = require("path");
+// dotenv.config({ path: path.join(__dirname, "./config/.env") });
 require("./config/database");
 require("./config/passport");
 const PORT = process.env.PORT || 8002;
