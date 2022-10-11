@@ -6,13 +6,12 @@ const PORT = process.env.PORT || 8002;
 const MongoStore = require("connect-mongo");
 const logger = require("morgan");
 const app = express();
-// const path = require("path");
 const cors = require("cors");
 const mainRoutes = require("./routes/main");
 const projectRoutes = require("./routes/projects");
 const dotenv = require("dotenv");
 const path = require("path");
-dotenv.config({ path: path.join(__dirname, "../config/.env") });
+dotenv.config({ path: path.join(__dirname, "./config/.env") });
 require("./config/database");
 require("./config/passport");
 
