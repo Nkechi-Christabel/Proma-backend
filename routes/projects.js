@@ -24,8 +24,9 @@ router.delete(
   projectsController.deleteProject
 );
 router.put(
-  "update/:id",
+  "/update/:id",
   passport.authenticate("jwt", { session: false }),
+  upload.single("image"),
   projectsController.updateProject
 );
 
