@@ -16,13 +16,13 @@ require("./config/passport");
 const PORT = process.env.PORT || 8002;
 
 //Cross-browser-origin
-const corsOptions = {
-  origin: process.env.LOCAL || process.env.SITE_ORIGIN,
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-};
+// const corsOptions = {
+//   origin: process.env.LOCAL || process.env.SITE_ORIGIN,
+//   credentials: true, //access-control-allow-credentials:true
+//   optionSuccessStatus: 200,
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 //Logging in the console
 app.use(logger("dev"));
