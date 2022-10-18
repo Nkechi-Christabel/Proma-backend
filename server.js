@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 8002;
 
 //Cross-browser-origin
 const corsOptions = {
-  origin: "http://localhost:3000" || process.env.SITE_ORIGIN,
+  origin: true,
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
