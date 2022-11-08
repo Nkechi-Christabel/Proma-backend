@@ -2,7 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
-const MongoStore = require("connect-mongo");
 const logger = require("morgan");
 const app = express();
 const cors = require("cors");
